@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
+import './sass/style.scss';
 import Navbar from "./component/layout/Navbar";
 import Landing from "./component/layout/Landing";
 import Dashboard from "./component/dashboard/Dashboard";
@@ -12,9 +12,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="body">
           <header>
-            <Navbar />
+            {/* <Navbar /> */}
           </header>
           <Route exact path="/" component={Landing} />
           <Route exact path="/dashboard" component={Dashboard} />

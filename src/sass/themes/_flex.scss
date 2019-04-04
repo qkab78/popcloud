@@ -1,0 +1,32 @@
+.flex{
+    @include display-flex();
+}
+
+.flex-column{
+    @include flex-direction(column);
+}
+
+.flex-row{
+    @include flex-direction(row);
+}
+
+.flex-center{
+    @include justify-content(center); //horizontal
+    @include align-items(center); //vertical
+}
+
+.flex-space-between{
+    @include justify-content(space-between)
+}
+
+.justify-start{
+    @include justify-content(flex-start);
+}
+
+.justify-end{
+    @include justify-content(flex-end);
+}
+
+.grow{
+    @include flex-grow(1);
+}
