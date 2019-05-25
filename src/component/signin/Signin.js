@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { loginUser } from '../../redux/actions/auth-actions';
 
-export default class Signin extends Component {
+class Signin extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -16,6 +19,7 @@ export default class Signin extends Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state);
+        this.props.loginUser(this.state)
     }
     render() {
         return (
@@ -35,3 +39,7 @@ export default class Signin extends Component {
         )
     }
 }
+const mapStateToProps = state => ({
+    auth:state.auth
+})
+export default connect(mapStateToProps, {loginUser})(withRouter(Signin))

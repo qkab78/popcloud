@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+import {connect} from 'react-redux';
+import { withRouter } from 'react-router-dom';
+import { registerUser } from '../../redux/actions/user-actions';
 
-export default class Signup extends Component {
+class Signup extends Component {
     constructor(props){
         super(props);
         this.state = {
@@ -9,7 +12,8 @@ export default class Signup extends Component {
             email:"",
             client_name:"",
             password:"",
-            confirmPassword:""
+            confirmPassword:"",
+            credit_card:{}
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -21,7 +25,12 @@ export default class Signup extends Component {
     handleSubmit = e => {
         e.preventDefault();
         console.log(this.state);
+        this.props.registerUser(this.state, this.props.history)
     }
+    componentDidMount() {
+        console.log(this.props)
+    }
+    
     render() {
         return (
             <main>
@@ -44,3 +53,8 @@ export default class Signup extends Component {
         )
     }
 }
+
+const mapStateToProps = state => ({
+    auth:state.auth
+})
+export default connect(mapStateToProps, {registerUser})(withRouter(Signup))
