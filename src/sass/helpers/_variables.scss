@@ -1,8 +1,20 @@
 $main_background: linear-gradient(to right bottom, #2081c4, #4e96cf, #71abd9, #92c1e3, #b3d6ee, #c6e0f4, #d9eafa, #eaf4ff, #f1f6ff, #f7f9ff, #fcfcff, #ffffff);
 
 // $main_font: Montserrat, sans-serif;
-$main_font: Officina, serif;
+$main_font: OfficinaSerif;
 $second_font:Lato, sans-serif;
+
+$primary-color: #fff;
+$secondary-color: #2181c4;
+$black: #171718;
+$show-home-image: true;
+$home-image: url(../../assets/images/logo.png);
+$background-opacity:0.7;
+$background-image:linear-gradient(to left top, #2181c4, #5a76c5, #8468bc, #a657a8, #be448b);
+@font-face {
+    font-family: OfficinaSerif;
+    src: url(../assets/fonts/OfficinaSerifStd-Book.otf) format("opentype");
+}
 
 $screen-xs: 576px;
 $screen-md: 768px;
