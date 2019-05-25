@@ -25,9 +25,9 @@ class Navbar extends Component {
             <li className="nav-item">
               <Link to="/signin" className={this.props.location.pathname === "/signin" ? `${this.state.style} active` : this.state.style}>Connexion</Link>
             </li>
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link className={this.props.location.pathname === "/admin" ? `${this.state.style} active` : this.state.style} to="/admin">Admin</Link>
-            </li>
+            </li> */}
         </ul>
       </nav>
     );
